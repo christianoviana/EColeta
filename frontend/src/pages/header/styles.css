@@ -1,0 +1,25 @@
+header {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ #btnBack {
+    color: var(--title-color);
+    font-weight: bold;
+    text-decoration: none;
+  
+    display: flex;
+    align-items: center;
+  }
+
+  #arrow {
+    margin-right: 16px;
+    color: var(--primary-color);
+  }
