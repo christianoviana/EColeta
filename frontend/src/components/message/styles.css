@@ -1,0 +1,44 @@
+.container{
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.96);
+}
+
+.container.hide{
+    display: none;
+}
+
+.container.show{
+    display: block;
+}
+
+.popup{
+    position: relative;
+    top: 50%;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.popup > h1{
+    font-weight: bolder;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+#FiCheckCircle{
+    font-size: 30px;
+    color: #2FB86E;
+}
+
+#FiXCircle{
+    font-size: 30px;
+    color: #FF2211;
+}
+
+

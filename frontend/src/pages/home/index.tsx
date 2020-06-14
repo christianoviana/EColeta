@@ -1,8 +1,8 @@
 import React from 'react';
 import './styles.css';
-import {FiLogIn} from 'react-icons/fi';
+import {FiLogIn, FiSearch} from 'react-icons/fi';
 
-import Header from '../header';
+import Header from '../../components/header/index';
 import {Link} from 'react-router-dom';
 
 const Home = () => {
@@ -14,10 +14,15 @@ const Home = () => {
                     <h1>Seu marketplace de coleta de resíduos</h1>
                     <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</p>
 
-                    <Link to='/create-points'>
+                    <Link to='/find-points' className='purple'>
+                        <span><FiSearch/></span>
+                        <strong>Encontre um ponto de coleta</strong>
+                    </Link>
+
+                    <Link to='/create-points' className='primary-color'>
                         <span><FiLogIn/></span>
                         <strong>Cadastre um ponto de coleta</strong>
-                    </Link>
+                    </Link>                 
                 </main>
             </div>        
         </div>

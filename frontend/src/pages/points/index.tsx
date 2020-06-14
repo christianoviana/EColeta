@@ -1,12 +1,13 @@
 import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
 import './styles.css';
-import Header from '../header'; 
+import Header from '../../components/header/index';
 import {Map, TileLayer, Marker} from 'react-leaflet';
 import {LeafletMouseEvent} from 'leaflet';
 import api from '../../services/api';
 import apiIbge from '../../services/api-ibge';
 import {Link, useHistory} from 'react-router-dom';
 import Dropzone from '../../components/dropzone';
+import Message from '../../components/message';
 
 
 interface ItemDto{
@@ -31,6 +32,7 @@ const Points = ()=>{
     const [formData, setFormData] = useState({name:'', email:'', whatsapp:''});
     const [selectedItems, setSelectedItems] = useState<number[]>([]);
     const [selectedFile, setSelectedFile] = useState<File>();
+    const [showMessage, setShowMessage] = useState(false);
 
     const history = useHistory();
 
@@ -108,7 +110,7 @@ const Points = ()=>{
 
     function handleSubmit(event:FormEvent){  
         event.preventDefault();
-
+     
         const {name, email, whatsapp} = formData;
         const city = selectedCity;
         const state = selectedUf;
@@ -135,8 +137,13 @@ const Points = ()=>{
             console.log(response);
         });
 
-        alert('Ponto Cadastrado com Sucesso');
-        history.push('/home');
+        // Sucess Message
+        setShowMessage(true);
+
+        setTimeout(()=>{            
+            setShowMessage(false);            
+            history.push('/home');
+        }, 5000);
     }
 
     return (
@@ -146,7 +153,9 @@ const Points = ()=>{
            <form onSubmit={handleSubmit}>
                <h1>Cadastro do <br/> ponto de coleta</h1>
 
-                <Dropzone onFileUploaded={setSelectedFile} />
+                <div id='point-image'>                    
+                    <Dropzone onFileUploaded={setSelectedFile} />
+                </div>
 
                <fieldset>
                    <legend>
@@ -244,7 +253,11 @@ const Points = ()=>{
                <button type="submit">
                     Cadastrar Ponto de Coleta
                </button>
-           </form>                 
+           </form>  
+           <Message 
+                isShow={showMessage} 
+                isSucess={true} 
+                message={'Cadastro Realizado com Sucesso'}/>               
        </div>
     );
 }

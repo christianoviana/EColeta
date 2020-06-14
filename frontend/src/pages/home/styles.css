@@ -44,16 +44,24 @@
   #page-home .content main a {
     width: 100%;
     max-width: 360px;
-    height: 72px;
-    background: var(--primary-color);
+    height: 65px;
     border-radius: 8px;
     text-decoration: none;
-  
+    opacity: 1;
     display: flex;
     align-items: center;
     overflow: hidden;
+    transition: opacity 0.3s;
   
-    margin-top: 40px;
+    margin-top: 30px;
+  }
+
+  .primary-color{       
+    background: var(--primary-color);
+  }
+
+  .purple{    
+    background: rgb(113, 89, 193);
   }
   
   #page-home .content main a span {
@@ -81,7 +89,8 @@
   }
   
   #page-home .content main a:hover {
-    background: #2FB86E;
+    /* background: #2FB86E; */
+    opacity: 0.9;
   }
   
   @media(max-width: 900px) {

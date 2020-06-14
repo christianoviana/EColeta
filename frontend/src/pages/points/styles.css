@@ -1,32 +1,37 @@
-#page-create-point {
+#page-create-point, 
+#page-find-point {
     width: 100%;
     max-width: 1100px;
   
     margin: 0 auto;
   }
       
-  #page-create-point form {
+  #page-create-point form, 
+  #page-find-point form {
     margin: 80px auto;
     padding: 64px;
     max-width: 730px;
     background: #FFF;
     border-radius: 8px;
-  
+
     display: flex;
     flex-direction: column;
   }
   
-  #page-create-point form h1 {
+  #page-create-point form h1, 
+  #page-find-point form h1 {
     font-size: 36px;
   }
-  
-  #page-create-point form fieldset {
+
+  #page-find-point form fieldset,
+    #page-create-point form fieldset {
     margin-top: 64px;
     min-inline-size: auto;
     border: 0;
   }
   
-  #page-create-point form legend {
+  #page-find-point form legend,
+    #page-create-point form legend {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -34,22 +39,25 @@
     margin-bottom: 40px;
   }
   
-  #page-create-point form legend h2 {
+  #page-find-point form legend h2,
+    #page-create-point form legend h2 {
     font-size: 24px;
   }
   
-  #page-create-point form legend span {
+  #page-find-point form legend span,
+    #page-create-point form legend span {
     font-size: 14px;
     font-weight: normal;
     color: var(--text-color);
   }
   
-  #page-create-point form .field-group {
+  #page-create-point form .field-group, #page-find-point form .field-group {
     flex: 1;
     display: flex;
   }
   
-  #page-create-point form .field {
+  #page-find-point form .field, 
+    #page-create-point form .field{
     flex: 1;
   
     display: flex;
@@ -57,6 +65,9 @@
     margin-bottom: 24px;
   }
   
+  #page-find-point form .field input[type=text],
+  #page-find-point form .field input[type=email],
+  #page-find-point form .field input[type=number],
   #page-create-point form .field input[type=text],
   #page-create-point form .field input[type=email],
   #page-create-point form .field input[type=number] {
@@ -69,7 +80,8 @@
     color: #6C6C80;
   }
   
-  #page-create-point form .field select {
+  #page-create-point form .field select,
+  #page-find-point form .field select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -82,20 +94,24 @@
     color: #6C6C80;
   }
   
-  #page-create-point form .field input::placeholder {
+  #page-find-point form .field input::placeholder,
+    #page-create-point form .field input::placeholder {
     color: #A0A0B2;
   }
   
-  #page-create-point form .field label {
+  #page-find-point form .field label,
+    #page-create-point form .field label {
     font-size: 14px;
     margin-bottom: 8px;
   }
   
-  #page-create-point form .field :disabled {
+  #page-find-point form .field :disabled,
+    #page-create-point form .field :disabled {
     cursor: not-allowed;
   }
   
-  #page-create-point form .field-group .field + .field {
+  #page-find-point form .field-group .field + .field,
+    #page-create-point form .field-group .field + .field {
     margin-left: 24px;
   }
   
@@ -118,7 +134,7 @@
   
   #page-create-point form .leaflet-container {
     width: 100%;
-    height: 350px;
+    height: 300px;
     border-radius: 8px;
     margin-bottom: 24px;
   }
@@ -178,4 +194,41 @@
   .items-grid li.selected {
     background: #E1FAEC;
     border: 2px solid #34CB79;
+  }
+
+  .points-item{
+    list-style: none;
+  }
+
+  .points-item li {
+    background: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    height: 250px;
+    border-radius: 8px;
+    padding: 5px;
+    margin-top: 15px;  
+    width: 48%;
+    float: left;
+    text-align: center;  
+    cursor: pointer;
+  }
+
+  .points-item li + li{    
+    margin-left: 20px;
+  }
+
+  .points-item li img {
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100%;
+    border: 1px dotted #34CB79;
+  }
+
+  .points-item li span {
+    flex: 1;
+    margin-top: 10px;
+    display: block;
+    font-weight: bolder;      
+    text-align: center;
+    color: var(--title-color)
   }
