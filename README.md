@@ -21,3 +21,6 @@ http://localhost:9088/items/{id} <br />
 http://localhost:9088/points <br />
 http://localhost:9088/points/{id} 
 
+## Screnshoot
+
+![alt text](https://github.com/christianoviana/ecoleta/blob/master/resources/ecoletas.gif)
